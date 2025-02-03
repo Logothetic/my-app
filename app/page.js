@@ -1,113 +1,124 @@
+import ButtonLogin from "@/components/ButtonLogin";
+import Link from "next/link";
+import FAQListItem from "@/components/FAQListItem";
 import Image from "next/image";
+import productDemo from "./productDemo.jpeg";
 
 export default function Home() {
+  const isLoggedIn = false;
+  const name = "Alex";
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      {/* HEADER */}
+      <section className="bg-base-200 ">
+        <div className="flex justify-center items-center justify-between px-8 py-2  max-w-5xl mx-auto">
+          <div className="font-bold">CodeFastSaas</div>
+          <div className="space-x-4 max-md:hidden">
+            <a className="link link-hover" href="#pricing">
+              Pricing
+            </a>
+            <a className="link link-hover" href="#faq">
+              FAQ
+            </a>
+          </div>
+          <div>
+            <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
+      {/* HERO */}
+      <section className="px-8 text-center lg:text-left py-32 max-w-5xl mx-auto flex flex-col items-center lg:flex-row gap-14 lg:items-start">
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src={productDemo}
+          alt="Product demo"
+          className="w-96 rounded-xl"
         />
-      </div>
+        <div>
+          <h1 className="text-4xl lg:text-5xl font-extrabold mb-6">
+            Collect customer feedback to build better products
+          </h1>
+          <div className="opacity-90 mb-10">
+            Create a feedback board in minutes, prioritize features and build
+            products that your customers will love.
+          </div>
+          <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+        </div>
+      </section>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
+      {/* PRICING */}
+      <section id="pricing" className="bg-base-200">
+        <div className="px-8 py-32 max-w-3xl mx-auto">
+          <p className="text-sm uppercase font-medium text-center text-primary mb-4">
+            Pricing
           </p>
-        </a>
+          <h2 className="text-4xl lg:text-4xl font-extrabold mb-12">
+            A pricing that adapts to your needs
+          </h2>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          <div className="p-8 bg-base-100 max-w-96 rounded-3xl mx-auto space-y-6">
+            <div className="flex gap-2 items-baseline">
+              <div className="text-4xl font-black">$19</div>
+              <div className="uppercase text-sm font-medium opacity-60">
+                /Month
+              </div>
+            </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+            <ul className="space-y-1">
+              {[
+                "Collect Customer Feedback",
+                "Unlimited Boards",
+                "Admin Dashboard",
+                "24/7 Support",
+              ].map((feature) => (
+                <li className="flex gap-2 items-center" key={feature}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    fill="currentColor"
+                    className="text-primary size-4"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  {feature}
+                </li>
+              ))}
+            </ul>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+            <ButtonLogin
+              isLoggedIn={isLoggedIn}
+              name={name}
+              extraStyle="w-full"
+            ></ButtonLogin>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="bg-base-200">
+        <div className="py-32 px-8 max-w-3xl mx-auto">
+          <p className="text-sm uppercase font-medium text-center text-primary mb-4">
+            FAQ
           </p>
-        </a>
-      </div>
+          <h2 className="text-4xl lg:text-4xl font-extrabold mb-12 text-center ">
+            Frequently Asked Questions
+          </h2>
+
+          <ul className="max-w-lg mx-auto">
+            {[
+              { question: "Can i get a refund", answer: "no" },
+              { question: "I have another question", answer: "Lorem ipsum" },
+            ].map((qa) => (
+              <FAQListItem key={qa.question} qa={qa} />
+            ))}
+          </ul>
+        </div>
+      </section>
     </main>
   );
 }
